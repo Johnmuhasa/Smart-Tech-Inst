@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=" UTF-8";>
+    </meta>
+    <meta viewport=" width=device-width, info-item=1.0">
+</meta>
+<title> SMART TECH INSTITUTE </title>
+ <link rel="stylesheet" href="Style.css">
+    </head>
+<body style="background-color: lightblue;">
+    <a href="Home.html">Home</a>&nbsp &nbsp|&nbsp &nbsp
+    <a href="About.html">About</a>&nbsp &nbsp|&nbsp &nbsp
+    <a href="Courses.html">Courses</a>&nbsp &nbsp|&nbsp &nbsp
+    <a href="Departments.html">Departments</a>&nbsp &nbsp|&nbsp &nbsp
+    <a href="Gallery.html">Gallery</a>&nbsp &nbsp|&nbsp &nbsp
+    <a href="Registration.html">Registration</a>&nbsp &nbsp|&nbsp &nbsp
+    <a href="Events.html">Events</a>&nbsp &nbsp|&nbsp &nbsp
+    <a href="Resources.html">Resources</a>&nbsp &nbsp|&nbsp &nbsp
+    <a href="Media.html">Media</a>&nbsp &nbsp|&nbsp &nbsp
+    <a href="FAQ.html">FAQ</a>&nbsp &nbsp|&nbsp &nbsp
+    <a href="Student Portal.html">Student Portal</a>&nbsp &nbsp|&nbsp &nbsp
+    <a href="Contact.html">Contact</a>&nbsp &nbsp|&nbsp &nbsp
+    <a href="Formatting.html">Formatting</a>
+     <hr size="4px" color="black"></hr>
+<h2> Student Registration Form </h2>
+<form action="#" method="post">
+    <p>
+        First Name: <input type="text" name="fname"
+        placeholder="e.g. John" required maxlength="20">
+    </p>
+    <p>
+        Last Name: <input type="text" name="lname" 
+        placeholder="e.g. Muhasa" required>
+    </p>
+    <p>
+        Email: <input type="email" name="u email"
+        placeholder="e.g. example@gmail.com" required>
+    </p>
+    <p>
+        Phone Number: <input type="text" name="phone"
+        placeholder="e.g.0712345678" required>
+    </p>
+    <p>
+        Gender: <input type="radio" name="gender" value="male"> Male
+        <input type="radio" name="gender" value="female"> Female
+    </p>
+    <p> 
+        Skills: <input type="checkbox" name="skill" value="html"> HTML
+        <input type="checkbox" name="skill" value="css"> CSS 
+        <input type="checkbox" name="skill" value="js"> JavaScript
+        <input type="checkbox" name="skill" value="py"> Python
+        <input type="checkbox" name="skill" value="math"> Mathematics
+        <input type="checkbox" name="skill" value="electr"> Electricity
+        <input type="checkbox" name="skill" value="phys"> Physics
+        <input type="checkbox" name="skill" value="scien"> Science
+        <input type="checkbox" name="skill" value="hygie"> Hygiene knowlodge
+        <input type="checkbox" name="skill" value="langu"> Language skills
+        
+    </p>
+    <p> 
+        Courses selection: <select name="course">
+            <option value="python"> Python programming </option>
+            <option value="font-end"> Font-end Development </option>
+            <option value="digital"> Digital Marketing </option>
+            <option value="financial"> Financial Analysis </option>
+            <option value="electrical"> Electrical Installation </option>
+            <option value="Civil"> Civil Engineering </option>
+            <option value="hosp"> Culinary Arts </option>
+            <option value="hosp"> Hotel Operation </option>
+        </select>
+    </p>
+    <p> Date of Birth: <input type="date" name="dob" id="dob"
+        onchange="calculateage()"></p>
+    <p> Age: <input type="number" id="age" name="age"
+        readonly placeholder="Auto-calculated"></p>
+    <p> Upload Passport Photo: <input type="file" name="photo"></p>
+    <p>
+        Address:<br>
+        <textarea name="address" rows="4" cols="30" placeholder="Enter your home address ..."></textarea></p>
+    <button type="Submit"> Submit </button>
+    <button type="reset"> Reset </button>
+</form>
+<script>
+    function calculateage() {
+        var birthDateInput=
+        document.getElementById('dob').value;
+        if(birthDateInput) {
+            var birDate = new Date(birthDateInput);
+            var today= new Date();
+            var age= today.getFullYear() - birDate.getFullYear();
+            var m=today.getMonth() - birthDate.getMonth();
+            //Adjust age if birthday hasn't happened yet this year
+            if(m<0|| (m === 0 && today.getDate()<birDate.getDate())) {
+                age--;
+            }
+
+            document.getElementById('age').value=age;
+        }
+    }
+</script>
+</body>
+</html>
